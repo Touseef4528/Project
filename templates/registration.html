@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<title>Trato Community</title>
+	<link rel="icon" href="{% static 'images/fav.png' %}" type="image/png" sizes="16x16">
+
+	<link rel="stylesheet" href="{% static 'css/main.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/color.css' %}">
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+</head>
+
+<body>
+
+	{% if messages %}
+	{% for message in messages %}
+	<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+	  {{ message }}
+	  <button type="button" class="btn-close m-2" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+	{% endfor %}
+	{% endif %}
+	<py-scrip>
+		<!--<div class="se-pre-con"></div>-->
+		<div class="theme-layout">
+			<div class="container-fluid pdng0">
+				<div class="row merged">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<div class="land-featurearea">
+							<div class="land-meta">
+								<h1>Trato</h1>
+								<p>
+									<!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, doloribus. Odio
+									unde sed itaque ipsum distinctio adipisci corporis optio. Officiis. -->
+								</p>
+								<div class="friend-logo">
+									<span><img src="{% static 'images/Trato TEXT.png' %}" alt=""></span>
+								</div>
+								<a href="#" title="" class="folow-me">Follow Us on</a>
+							</div>
+						</div>
+					</div>
+
+
+
+
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div class="login-reg-bg">
+					<div class="log-reg-area sign">
+						<h2 class="log-title">Login</h2>
+						<!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script>  -->
+
+							<p>
+								Don’t use TRATO Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join now</a>
+							</p>
+							<div class="column is-4 is-offset-4">
+								<h3 class="title">Login</h3>
+
+								<form action="/register/" method="POST">
+									{% csrf_token %}
+					
+									<br>
+					
+									<div class="form-group">	
+										<input type="text" name="regname">
+										<label class="control-label" for="input" style="color: black">Name</label><i class="mtrl-select"></i>
+									  </div>
+									  <br><br>
+									  <div class="form-group">	
+										<input type="email" name="regemail">
+										<label class="control-label" for="input" style="color: black">email</label><i class="mtrl-select"></i>
+									  </div>
+
+									  <br><br>
+									  <div class="form-group">	
+										<input type="password" name="regpassword">
+										<label class="control-label" for="input" style="color: black">Password</label><i class="mtrl-select"></i>
+									  </div>
+					
+									  <br><br>
+									<a href="/new"><button style="width: 6vw; height: 6vh; background-color: rgb(108, 108, 211);">Submit</button></a><br><br>
+								</form>
+	
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+
+</body>
+
+</html>
